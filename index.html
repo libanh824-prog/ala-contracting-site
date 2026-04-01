@@ -421,6 +421,14 @@
 
     toggle.addEventListener('click', () => {
       mobile.classList.toggle('open');
+      toggle.classList.toggle('open');
+    });
+
+    mobile.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobile.classList.remove('open');
+        toggle.classList.remove('open');
+      });
     });
 
     // Scroll reveal

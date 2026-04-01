@@ -446,7 +446,16 @@
   <script>
     const toggle = document.getElementById('navToggle');
     const mobile = document.getElementById('navMobile');
-    toggle.addEventListener('click', () => mobile.classList.toggle('open'));
+    toggle.addEventListener('click', () => {
+      mobile.classList.toggle('open');
+      toggle.classList.toggle('open');
+    });
+    mobile.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobile.classList.remove('open');
+        toggle.classList.remove('open');
+      });
+    });
   </script>
 </body>
 </html>
